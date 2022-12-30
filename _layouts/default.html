@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: "en" }}">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>{{ page.title }}</title>
+
+    <meta name="generator" content="Jekyll v3.9.0" />
+    <meta property="og:title" content="Bid'n'Buy Club" />
+    <meta property="og:locale" content="en_AU" />
+    {% if page.redirect %}
+    <link rel="canonical" href="{{ page.rurl }}" />
+    {% else %}
+    <link rel="canonical" href="https://bnbc.bid{{ page.url }}" />
+    {% endif %}
+    <meta property="og:url" content="https://bnbc.bid/" />
+    <meta property="og:site_name" content="bnbc.bid" />
+    <meta name="twitter:card" content="summary" />
+    <meta property="twitter:title" content="{{ page.title }}" />
+
+    {%- if page.redirect %}
+    <meta http-equiv="Refresh" content="0; url='{{ page.rurl }}'" />
+    <script>
+      window.location.replace("{{ page.rurl }}");
+    </script>
+    {%- else %}
+    <link rel="stylesheet" href="/f/iA Writer Quattro/Webfonts/index.css">
+    <link rel="stylesheet" href="/f/style.css?cb=1234">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/f/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/f/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/f/favicon-16x16.png">
+    <link rel="manifest" href="/f/site.webmanifest">
+    {%- endif -%}
+  </head>
+  <body>
+    <div id="root">
+      <div class="quattro">
+
+        {%- if page.redirect %}
+        This is a redirect to <a href="{{ page.rurl }}">{{ page.rurl }}</a>.
+        {%- else -%}
+        {{ content }}
+        {%- endif -%}
+
+        <div class="footer-div">
+          <a href="mailto:contact@bidnbuy.club">Contact</a>
+          <a href="https://bidnbuy.club">Home</a>
+          <br/>
+          Bid'n'Buy
+          <br/>
+          Copyright &copy; 2023 Bid'n'Buy LLC Pty GmbH
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
